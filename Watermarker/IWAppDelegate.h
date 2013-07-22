@@ -7,9 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class IWView;
+@class IWPreferencesController;
 
-@interface IWAppDelegate : NSObject <NSApplicationDelegate>
+@interface IWAppDelegate : NSObject <NSApplicationDelegate>{
+    IBOutlet IWView *iWView;
+    IWPreferencesController *preferencesController;
+}
 
 @property (assign) IBOutlet NSWindow *window;
-
+-(IBAction)showOpenPanel:(id)sender;
+-(IBAction)showPreferencesPanel:(id)sender;
 @end
