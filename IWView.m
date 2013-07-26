@@ -15,13 +15,14 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        widthPercent=25;
-        opacity=0.5;
-        opacityPercent=50;
-        xOffsetPercent=5;
-        yOffsetPercent=5;
+        
         NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
         image=[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:[defaults valueForKey:IWWatermarkURLKey]]];
+        widthPercent=(int)[defaults integerForKey:IWSizeKey];
+        //opacity=0.5;
+        opacityPercent=(int)[defaults integerForKey:IWOpacityKey];
+        xOffsetPercent=(int)[defaults integerForKey:IWXOffsetKey];
+        yOffsetPercent=(int)[defaults integerForKey:IWYOffsetKey];
     }
     
     return self;
@@ -108,14 +109,43 @@
 -(void)setCorner:(int)newCorner{
     corner=newCorner;
     NSLog(@"Corner: %d",corner);
+    bottom=YES;
+    if(newCorner<2){
+        bottom=NO;
+    }
+    right=YES;
+    if(newCorner==0||newCorner==2){
+        right=NO;
+    }
+    [self setNeedsDisplay:YES];
+}
+
+-(Boolean)bottom{
+    return bottom;
+}
+
+-(void)setBottom:(Boolean)newBottom{
+    bottom=newBottom;
+    [self setNeedsDisplay:YES];
+}
+
+-(Boolean)right{
+    return right;
+}
+
+-(void)setRight:(Boolean)newRight{
+    right=newRight;
     [self setNeedsDisplay:YES];
 }
 
 -(void)setWatermarkFile:(NSURL *)newWatermarkFile{
     watermarkFile=newWatermarkFile;    
 }
+
 -(NSURL *)watermarkFile{
     return watermarkFile;
 }
+
+
 
 @end

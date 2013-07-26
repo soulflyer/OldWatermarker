@@ -16,13 +16,17 @@
     int xOffsetPercent;
     int yOffsetPercent;
     int corner;
+    Boolean bottom;
+    Boolean right;
     NSURL *watermarkFile;
 }
 
 @property (assign) int corner;
+@property (assign) Boolean bottom;
+@property (assign) Boolean right;
 @property (assign) int xOffsetPercent;
 @property (assign) int yOffsetPercent;
-@property (assign) int widhPercent;
+@property (assign) int widthPercent;
 @property (assign) int opacityPercent;
 @property (assign) float opacity;
 @property (strong) NSImage *image;

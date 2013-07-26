@@ -18,4 +18,5 @@
 @property (assign) IBOutlet NSWindow *window;
 -(IBAction)showOpenPanel:(id)sender;
 -(IBAction)showPreferencesPanel:(id)sender;
+-(IBAction)setPreferences:(id)sender;
 @end

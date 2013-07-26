@@ -15,6 +15,7 @@
 +(void)initialize{
     NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
     [defaultValues setObject:@"file://~/Documents/watermark" forKey:IWWatermarkURLKey];
+    [defaultValues setValue:[NSNumber numberWithInt:50] forKey:IWOpacityKey];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
     NSLog(@"Registered defaults");
 }
@@ -44,7 +45,16 @@
     if(!preferencesController){
         preferencesController=[[IWPreferencesController alloc] init];
     }
-    NSLog(@"showing %@",preferencesController);
+    //NSLog(@"showing %@",preferencesController);
     [preferencesController showWindow:self];
+}
+
+-(IBAction)setPreferences:(id)sender{
+    NSLog(@"In setPreferences");
+    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[iWView opacityPercent] forKey:IWOpacityKey];
+    [defaults setInteger:[iWView widthPercent] forKey:IWSizeKey];
+    [defaults setInteger:[iWView xOffsetPercent] forKey:IWXOffsetKey];
+    [defaults setInteger:[iWView yOffsetPercent] forKey:IWYOffsetKey];
 }
 @end
