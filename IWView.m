@@ -63,6 +63,7 @@
 
 -(void)setOpacity:(float)newOpacity{
     opacity=newOpacity;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -72,6 +73,7 @@
 
 -(void)setOpacityPercent:(int)newOpacityPercent{
     opacityPercent=newOpacityPercent;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -81,6 +83,7 @@
 
 -(void)setWidthPercent:(int)newWidthPercent{
     widthPercent=newWidthPercent;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -90,6 +93,7 @@
 
 -(void)setXOffsetPercent:(int)newXOffsetPercent{
     xOffsetPercent=newXOffsetPercent;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -99,6 +103,7 @@
 
 -(void)setYOffsetPercent:(int)newYOffsetPercent{
     yOffsetPercent=newYOffsetPercent;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -117,6 +122,7 @@
     if(newCorner==0||newCorner==2){
         right=NO;
     }
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -126,6 +132,7 @@
 
 -(void)setBottom:(Boolean)newBottom{
     bottom=newBottom;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -135,6 +142,7 @@
 
 -(void)setRight:(Boolean)newRight{
     right=newRight;
+    [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
 
@@ -146,6 +154,15 @@
     return watermarkFile;
 }
 
+-(NSString *)code{
+    NSLog(@"In code");
+    return [NSString stringWithFormat:@"B%dR%dS%dT%dX%dY%d",bottom,right,widthPercent,opacityPercent,xOffsetPercent,yOffsetPercent];
+}
 
+-(void)setCode:(NSString *)newCode{
+    NSLog(@"In setCode");
+    //code=newCode;
+    //code=[NSString stringWithFormat:@"BR%dS%dT%dX%dY%d",corner,widthPercent,opacityPercent,xOffsetPercent,yOffsetPercent];
+}
 
 @end

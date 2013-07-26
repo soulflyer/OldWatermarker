@@ -19,8 +19,10 @@
     Boolean bottom;
     Boolean right;
     NSURL *watermarkFile;
+    //NSString *code;
 }
 
+//@property (strong) NSString *code;
 @property (assign) int corner;
 @property (assign) Boolean bottom;
 @property (assign) Boolean right;
