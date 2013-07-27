@@ -36,8 +36,19 @@
     if(image){
         NSRect imageRect;
         imageRect.origin=NSZeroPoint;
-        imageRect.origin.x=[self frame].size.width * xOffsetPercent / 100.0;
-        imageRect.origin.y=[self frame].size.height * yOffsetPercent / 100.0;
+        if(right){
+            imageRect.origin.x=[self frame].size.width*(1-(xOffsetPercent+widthPercent)/100.0);
+        }else{
+            imageRect.origin.x=[self frame].size.width * xOffsetPercent/100.0;
+        }
+        if(bottom){
+            imageRect.origin.y=[self frame].size.height * yOffsetPercent / 100.0;
+        }else{
+            imageRect.origin.y=[self frame].size.height*(1-(yOffsetPercent+widthPercent*image.size.height/image.size.width)/100.0);
+                                                         //-(yOffsetPercent+widthPercent*image.size.height/image.size.width/100.0));
+        }
+        
+        
         //imageRect.origin.x=100;
         //imageRect.origin.y=100;
         imageRect.size.width=[self frame].size.width * widthPercent / 100.0;
@@ -109,6 +120,7 @@
 
 -(int)corner{
     return corner;
+    //return (bottom*2)+right;
 }
 
 -(void)setCorner:(int)newCorner{
@@ -132,6 +144,8 @@
 
 -(void)setBottom:(Boolean)newBottom{
     bottom=newBottom;
+    corner=(bottom*2)+right;
+    NSLog(@"corner is: %d",corner);
     [self setCode:@""];
     [self setNeedsDisplay:YES];
 }

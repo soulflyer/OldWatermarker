@@ -19,4 +19,8 @@
 -(IBAction)showOpenPanel:(id)sender;
 -(IBAction)showPreferencesPanel:(id)sender;
 -(IBAction)setPreferences:(id)sender;
+-(IBAction)setBottom:(id)sender;
+-(IBAction)setTop:(id)sender;
+-(IBAction)setLeft:(id)sender;
+-(IBAction)setRight:(id)sender;
 @end

@@ -57,4 +57,23 @@
     [defaults setInteger:[iWView xOffsetPercent] forKey:IWXOffsetKey];
     [defaults setInteger:[iWView yOffsetPercent] forKey:IWYOffsetKey];
 }
+
+-(IBAction)setBottom:(id)sender{
+    [iWView setBottom:YES];
+}
+
+-(IBAction)setTop:(id)sender{
+    [iWView setBottom:NO];
+}
+
+-(IBAction)setRight:(id)sender{
+    [iWView setRight:YES];
+}
+
+-(IBAction)setLeft:(id)sender{
+    [iWView setRight:NO];
+}
+
+
+
 @end
