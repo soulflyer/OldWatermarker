@@ -74,6 +74,30 @@
     [iWView setRight:NO];
 }
 
+-(IBAction)incX:(id)sender{
+    if([iWView xOffsetPercent]<50){
+        [iWView setXOffsetPercent:[iWView xOffsetPercent]+1];
+    }
+}
 
+-(IBAction)incY:(id)sender{
+    if([iWView yOffsetPercent]<50){
+        [iWView setYOffsetPercent:[iWView yOffsetPercent]+1];
+    }
+}
+
+-(IBAction)decX:(id)sender{
+    if([iWView xOffsetPercent]>0){
+        [iWView setXOffsetPercent:[iWView xOffsetPercent]-1];
+    }
+    
+}
+
+-(IBAction)decY:(id)sender{
+    if([iWView yOffsetPercent]>0){
+        [iWView setYOffsetPercent:[iWView yOffsetPercent]-1];
+    }
+    
+}
 
 @end

@@ -23,4 +23,8 @@
 -(IBAction)setTop:(id)sender;
 -(IBAction)setLeft:(id)sender;
 -(IBAction)setRight:(id)sender;
+-(IBAction)incX:(id)sender;
+-(IBAction)decX:(id)sender;
+-(IBAction)incY:(id)sender;
+-(IBAction)decY:(id)sender;
 @end
