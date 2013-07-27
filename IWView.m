@@ -44,8 +44,7 @@
         if(bottom){
             imageRect.origin.y=[self frame].size.height * yOffsetPercent / 100.0;
         }else{
-            imageRect.origin.y=[self frame].size.height*(1-(yOffsetPercent+widthPercent*image.size.height/image.size.width)/100.0);
-                                                         //-(yOffsetPercent+widthPercent*image.size.height/image.size.width/100.0));
+            imageRect.origin.y=[self frame].size.height*(1-(yOffsetPercent)/100.0)-[self frame].size.width*(image.size.height/image.size.width)*widthPercent/100.0;
         }
         
         
