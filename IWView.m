@@ -168,14 +168,32 @@
 }
 
 -(NSString *)code{
-    NSLog(@"In code");
-    return [NSString stringWithFormat:@"B%dR%dS%dT%dX%dY%d",bottom,right,widthPercent,opacityPercent,xOffsetPercent,yOffsetPercent];
+    NSString* upDown;
+    NSString* leftRight;
+    if(bottom){
+        upDown=@"B";
+    }else{
+        upDown=@"T";
+    }
+    if(right){
+        leftRight=@"R";
+    }else{
+        leftRight=@"L";
+    }
+    return [NSString stringWithFormat:@"%@%@%dS%dX%dY%d",upDown,leftRight,opacityPercent,widthPercent,xOffsetPercent,yOffsetPercent];
 }
 
 -(void)setCode:(NSString *)newCode{
-    NSLog(@"In setCode");
     //code=newCode;
     //code=[NSString stringWithFormat:@"BR%dS%dT%dX%dY%d",corner,widthPercent,opacityPercent,xOffsetPercent,yOffsetPercent];
 }
 
+-(Boolean)visible{
+    return visible;
+}
+
+-(void)setVisible:(Boolean)visibility{
+    visible=visibility;
+    [self setNeedsDisplay:YES];
+}
 @end

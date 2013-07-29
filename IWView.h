@@ -18,14 +18,16 @@
     int corner;
     Boolean bottom;
     Boolean right;
+    Boolean visible;
     NSURL *watermarkFile;
     //NSString *code;
 }
 
-//@property (strong) NSString *code;
+@property (strong) NSString *code;
 @property (assign) int corner;
 @property (assign) Boolean bottom;
 @property (assign) Boolean right;
+@property (assign) Boolean visible;
 @property (assign) int xOffsetPercent;
 @property (assign) int yOffsetPercent;
 @property (assign) int widthPercent;

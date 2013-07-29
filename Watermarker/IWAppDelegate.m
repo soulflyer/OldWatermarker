@@ -80,24 +80,99 @@
     }
 }
 
--(IBAction)incY:(id)sender{
+-(void)incY{
     if([iWView yOffsetPercent]<50){
         [iWView setYOffsetPercent:[iWView yOffsetPercent]+1];
     }
 }
 
--(IBAction)decX:(id)sender{
-    if([iWView xOffsetPercent]>0){
-        [iWView setXOffsetPercent:[iWView xOffsetPercent]-1];
-    }
-    
-}
 
--(IBAction)decY:(id)sender{
+-(void)decY{
     if([iWView yOffsetPercent]>0){
         [iWView setYOffsetPercent:[iWView yOffsetPercent]-1];
     }
     
 }
 
+-(void)decX{
+    if([iWView xOffsetPercent]>0){
+        [iWView setXOffsetPercent:[iWView xOffsetPercent]-1];
+    }
+}
+
+-(void)incX{
+    if([iWView xOffsetPercent]<50){
+        [iWView setXOffsetPercent:[iWView xOffsetPercent]+1];
+    }
+}
+
+-(IBAction)moveLeft:(id)sender{
+    if([iWView right]){
+        [self decX];
+    }else{
+        [self incX];
+    }
+}
+
+-(IBAction)moveRight:(id)sender{
+    if([iWView right]){
+        [self incX];
+    }else{
+        [self decX];
+    }
+}
+
+-(IBAction)moveUp:(id)sender{
+    if([iWView bottom]){
+        [self incY];
+    }else{
+        [self decY];
+    }
+}
+
+-(IBAction)moveDown:(id)sender{
+    if([iWView bottom]){
+        [self decY];
+    }else{
+        [self incY];
+    }
+}
+
+-(IBAction)incOpacity:(id)sender{
+    if([iWView opacityPercent]<100){
+        [iWView setOpacityPercent:[iWView opacityPercent]+1];
+    }
+}
+
+-(IBAction)decOpacity:(id)sender{
+    if([iWView opacityPercent]>0){
+        [iWView setOpacityPercent:[iWView opacityPercent]-1];
+    }
+}
+
+-(IBAction)incSize:(id)sender{
+    if([iWView widthPercent]<50){
+        [iWView setWidthPercent:[iWView widthPercent]+1];
+    }
+}
+
+-(IBAction)decSize:(id)sender{
+    if([iWView widthPercent]>5){
+        [iWView setWidthPercent:[iWView widthPercent]-1];
+    }
+}
+
+- (IBAction)copyToPasteboard:(id)sender {
+    NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+    [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil];
+    [pasteBoard setString: [iWView code] forType:NSStringPboardType];
+}
+
+-(IBAction)toggleVisibility:(id)sender{
+    if([iWView visible]){
+        [iWView setVisible:NO];
+    }else{
+        [iWView setVisible:YES];
+    }
+}
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE068E35178C1C3C00AA8B6F /* IWPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE068E34178C1C3C00AA8B6F /* IWPreferencesController.m */; };
 		AE068E37178C1FD500AA8B6F /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE068E36178C1FD500AA8B6F /* Preferences.xib */; };
+		AE170ED317A6186000EC609D /* icon.iconset in Resources */ = {isa = PBXBuildFile; fileRef = AE170ED217A6186000EC609D /* icon.iconset */; };
 		AE189EB917894313005BF002 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE189EB817894313005BF002 /* Cocoa.framework */; };
 		AE189EC317894313005BF002 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE189EC117894313005BF002 /* InfoPlist.strings */; };
 		AE189EC517894313005BF002 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE189EC417894313005BF002 /* main.m */; };
@@ -23,6 +24,7 @@
 		AE068E33178C1C3C00AA8B6F /* IWPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IWPreferencesController.h; sourceTree = "<group>"; };
 		AE068E34178C1C3C00AA8B6F /* IWPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IWPreferencesController.m; sourceTree = "<group>"; };
 		AE068E36178C1FD500AA8B6F /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		AE170ED217A6186000EC609D /* icon.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = icon.iconset; sourceTree = "<group>"; };
 		AE189EB517894313005BF002 /* Watermarker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watermarker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE189EB817894313005BF002 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AE189EBB17894313005BF002 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,6 +59,7 @@
 		AE189EAC17894313005BF002 = {
 			isa = PBXGroup;
 			children = (
+				AE170ED217A6186000EC609D /* icon.iconset */,
 				AE068E33178C1C3C00AA8B6F /* IWPreferencesController.h */,
 				AE068E34178C1C3C00AA8B6F /* IWPreferencesController.m */,
 				AE189ED517894484005BF002 /* IWView.h */,
@@ -176,6 +179,7 @@
 				AE189EC917894313005BF002 /* Credits.rtf in Resources */,
 				AE189ECF17894313005BF002 /* MainMenu.xib in Resources */,
 				AE068E37178C1FD500AA8B6F /* Preferences.xib in Resources */,
+				AE170ED317A6186000EC609D /* icon.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
