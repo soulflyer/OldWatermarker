@@ -2,7 +2,16 @@
 
 for i in $*
 do
-YEAR="2013"
+
+EXIFDATE=`exiftool -s3 -DateTimeOriginal $i`
+YEAR=${EXIFDATE:0:4}
+#YEAR="2013"
+WATERMARKFILE="/Users/iain/Pictures/watermarks/Soulflyer$YEAR.png"
+if [[ ! -f $WATERMARKFILE ]]
+then
+    /Users/iain/bin/create-watermark.sh $YEAR
+fi
+
 INSTRUCTIONS=`exiftool -s3 -SpecialInstructions $i`
 if [[ -z $INSTRUCTIONS ]]
 then
@@ -79,6 +88,6 @@ echo "W: " $WIDTH "H: " $HEIGHT "X: " $XOFFSET "Y: " $YOFFSET
 
 echo "Res: " $RES
 
-/opt/local/bin/composite -dissolve $OPACITY -gravity $CORNER -geometry ${WIDTH}x$HEIGHT+$XOFFSET+$YOFFSET /Users/iain/Pictures/watermarks/Soulflyer$YEAR.png $i $i
+/opt/local/bin/composite -dissolve $OPACITY -gravity $CORNER -geometry ${WIDTH}x$HEIGHT+$XOFFSET+$YOFFSET $WATERMARKFILE $i $i
 
 done
