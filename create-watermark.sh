@@ -39,7 +39,7 @@ YEAR_BLACK_X=$(($YEAR_X + $NAME_OFFSET))
            -draw "fill-opacity $NAME_FADE text $YEAR_X,$NAME_Y '$YEAR'"\
            ~/Pictures/Watermarks/$LOGO$YEAR.png
 
-display ~/Pictures/Watermarks/$LOGO$YEAR.png
+# display ~/Pictures/Watermarks/$LOGO$YEAR.png
 
 # composite -dissolve 50 -gravity southeast /tmp/font_shadow.png /tmp/IMG_6147.jpg -alpha set /tmp/watermarked.jpg
 
