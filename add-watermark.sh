@@ -6,9 +6,11 @@ do
     EXIFDATE=`exiftool -s3 -DateTimeOriginal $i`
     YEAR=${EXIFDATE:0:4}
     # YEAR="2013"
+    echo "Year: $YEAR"
     WATERMARKFILE="/Users/iain/Pictures/watermarks/Soulflyer$YEAR.png"
     if [[ ! -f $WATERMARKFILE ]]
     then
+        echo "Creating watermark: $YEAR"
         /Users/iain/bin/create-watermark.sh $YEAR
     fi
 
