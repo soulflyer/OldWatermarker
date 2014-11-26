@@ -1,1 +1,1 @@
-Watermarker can be used to add watermarks to aperture files. The transparent window must be possitioned over the image and the watermark code generated should then be copied to the "SpecialInstructions" IPTC field. This is read by the shell scrip that will be run after export.
+Watermarker can be used to add watermarks to aperture files. The transparent window must be positioned over the image and the watermark code generated should then be copied to the "SpecialInstructions" IPTC field. This is read by the shell script that will be run after export.
