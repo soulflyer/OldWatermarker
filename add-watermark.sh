@@ -90,6 +90,9 @@ do
 
     echo "Res: " $RES
 
-    /opt/local/bin/composite -dissolve $OPACITY -gravity $CORNER -geometry ${WIDTH}x$HEIGHT+$XOFFSET+$YOFFSET $WATERMARKFILE $i $i
+    COMMAND="/opt/local/bin/composite -dissolve $OPACITY -gravity $CORNER -geometry ${WIDTH}x$HEIGHT+$XOFFSET+$YOFFSET $WATERMARKFILE $i $i"
+
+    echo $COMMAND
+    $COMMAND
 
 done

@@ -67,15 +67,15 @@
     [self setNeedsDisplay:YES];
 }
 
--(float)opacity{
-    return opacity;
-}
-
--(void)setOpacity:(float)newOpacity{
-    opacity=newOpacity;
-    [self setCode:@""];
-    [self setNeedsDisplay:YES];
-}
+//-(float)opacity{
+//    return opacity;
+//}
+//
+//-(void)setOpacity:(float)newOpacity{
+//    opacity=newOpacity;
+//    //[self setCode:@""];
+//    [self setNeedsDisplay:YES];
+//}
 
 -(int)opacityPercent{
     return opacityPercent;
@@ -117,25 +117,6 @@
     [self setNeedsDisplay:YES];
 }
 
--(int)corner{
-    return corner;
-    //return (bottom*2)+right;
-}
-
--(void)setCorner:(int)newCorner{
-    corner=newCorner;
-    NSLog(@"Corner: %d",corner);
-    bottom=YES;
-    if(newCorner<2){
-        bottom=NO;
-    }
-    right=YES;
-    if(newCorner==0||newCorner==2){
-        right=NO;
-    }
-    [self setCode:@""];
-    [self setNeedsDisplay:YES];
-}
 
 -(Boolean)bottom{
     return bottom;
@@ -143,8 +124,6 @@
 
 -(void)setBottom:(Boolean)newBottom{
     bottom=newBottom;
-    corner=(bottom*2)+right;
-    NSLog(@"corner is: %d",corner);
     [self setCode:@""];
     [self setNeedsDisplay:YES];
 }
@@ -184,8 +163,7 @@
 }
 
 -(void)setCode:(NSString *)newCode{
-    //code=newCode;
-    //code=[NSString stringWithFormat:@"BR%dS%dT%dX%dY%d",corner,widthPercent,opacityPercent,xOffsetPercent,yOffsetPercent];
+  
 }
 
 -(Boolean)visible{

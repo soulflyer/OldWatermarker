@@ -10,12 +10,11 @@
 
 @interface IWView : NSView{
     NSImage *image;
-    float opacity;
+    //float opacity;
     int opacityPercent;
     int widthPercent;
     int xOffsetPercent;
     int yOffsetPercent;
-    int corner;
     Boolean bottom;
     Boolean right;
     Boolean visible;
@@ -24,7 +23,6 @@
 }
 
 @property (strong) NSString *code;
-@property (assign) int corner;
 @property (assign) Boolean bottom;
 @property (assign) Boolean right;
 @property (assign) Boolean visible;
